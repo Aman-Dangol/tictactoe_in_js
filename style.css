@@ -1,4 +1,12 @@
-.tb tr , .tb td{
-    border: 2px solid black;
+table,tr,th{
     
+    width: 280px;
+    height: 100px;
+}
+tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td:hover{
+    background-color: skyblue;
 }
