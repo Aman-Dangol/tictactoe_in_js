@@ -1,12 +1,21 @@
-table,tr,th{
-    
+table,tr,td{    
     width: 280px;
     height: 100px;
+    border-collapse: collapse;
 }
-tr,td{
-    border: 1px solid black;
+td:nth-child(n){
+    border-bottom: 2px solid black;
     border-collapse: collapse;
 }
 td:hover{
     background-color: skyblue;
+}
+td:nth-child(n){
+    border-right: 2px solid;
+}
+ tr:last-child td:nth-child(n){
+    border-bottom: 1px solid transparent;
+}
+td:last-child{
+    border-right: 2px solid transparent;
 }
