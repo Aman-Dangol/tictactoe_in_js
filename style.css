@@ -12,10 +12,11 @@ td:hover{
 }
 td:nth-child(n){
     border-right: 2px solid;
-}
+} 
  tr:last-child td:nth-child(n){
     border-bottom: 1px solid transparent;
 }
 td:last-child{
     border-right: 2px solid transparent;
+    
 }
