@@ -28,6 +28,9 @@ function clicked(index){
                 if(ele.style.backgroundColor!='red'){
                     if(ele.style.backgroundColor!="blue"){
                         ele.style.backgroundColor="blue";
+                        setTimeout(() => {
+                           checkWin("blue")
+                        }, 100);
                         playerCount++;
                     }else{
                         alert("youve already occupied this place");
@@ -71,6 +74,19 @@ function checkWin(color){
 
     if(document.getElementById(1).style.backgroundColor==color&&document.getElementById(4).style.backgroundColor==color && document.getElementById(7).style.backgroundColor==color){
         alert(color+" wins");
+        window.location.reload();
+
+        hasWon=true;
+    }
+    else if (document.getElementById(2).style.backgroundColor==color && document.getElementById(5).style.backgroundColor==color && document.getElementById(8).style.backgroundColor==color) {
+        alert(color+=" wins");
+        window.location.reload();
+
+        hasWon=true;
+    }
+    else if (document.getElementById(3).style.backgroundColor==color && document.getElementById(6).style.backgroundColor==color && document.getElementById(9).style.backgroundColor==color) {
+        alert(color+=" wins");
+        window.location.reload();
         hasWon=true;
     }
 
