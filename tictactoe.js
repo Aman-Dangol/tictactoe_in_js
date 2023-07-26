@@ -90,7 +90,7 @@ function checkWin(color){
         gameWon(color);
     }
     else if (document.getElementById(1).style.backgroundColor==color && document.getElementById(2).style.backgroundColor==color && document.getElementById(3).style.backgroundColor==color) {
-        gameWon();
+        gameWon(color);
     }
     else if (document.getElementById(1).style.backgroundColor==color && document.getElementById(5).style.backgroundColor==color && document.getElementById(9).style.backgroundColor==color) {
         gameWon(color);
