@@ -29,7 +29,6 @@ function clicked(index){
                 } 
             }
             else{
-                // turn();
                 if(ele.style.backgroundColor!='red'){
                     if(ele.style.backgroundColor!="blue"){
                         ele.style.backgroundColor="blue";
@@ -37,9 +36,7 @@ function clicked(index){
                         turn();
                         setTimeout(() => {
                            checkWin("blue")
-                        }, 100);
-                        
-
+                        }, 100);  
                     }else{
                         alert("youve already occupied this place");
                     }
@@ -49,14 +46,12 @@ function clicked(index){
                 }
     
             }
-            spaceLeft();
-        } 
-    }   else{
-        alert("game has ended")
+        }     
+        setTimeout(spaceLeft,100);
     }
-       
 }
-spaceLeft=()=>{
+console.log("");
+function spaceLeft(){
     let count = 0;
     if(hasWon==false){
         for(let i=1;i<=9;i++){
@@ -69,11 +64,7 @@ spaceLeft=()=>{
             setTimeout(noSpace,100);
             check=false;
         } 
-    }  
-    else{
-        alert("game has ended ")
-    } 
-
+    }
 }
 function noSpace(){
     alert("no space resart");
@@ -81,53 +72,32 @@ function noSpace(){
 function checkWin(color){
 
     if(document.getElementById(1).style.backgroundColor==color&&document.getElementById(4).style.backgroundColor==color && document.getElementById(7).style.backgroundColor==color){
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-
-        hasWon=true;
+        gameWon(color);
     }
     else if (document.getElementById(2).style.backgroundColor==color && document.getElementById(5).style.backgroundColor==color && document.getElementById(8).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-
-        hasWon=true;
+        gameWon(color);
     }
     else if (document.getElementById(3).style.backgroundColor==color && document.getElementById(6).style.backgroundColor==color && document.getElementById(9).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-        hasWon=true;
+        gameWon(color);
     }
     else if (document.getElementById(1).style.backgroundColor==color && document.getElementById(2).style.backgroundColor==color && document.getElementById(3).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-        hasWon=true;
+        gameWon(color);
     }
     else if (document.getElementById(4).style.backgroundColor==color && document.getElementById(5).style.backgroundColor==color && document.getElementById(6).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-        hasWon=true;
+        gameWon(color);
     }
     else if (document.getElementById(7).style.backgroundColor==color && document.getElementById(8).style.backgroundColor==color && document.getElementById(9).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-        hasWon=true;
+        gameWon(color);
     }
     else if (document.getElementById(1).style.backgroundColor==color && document.getElementById(2).style.backgroundColor==color && document.getElementById(3).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-        hasWon=true;
+        gameWon();
     }
     else if (document.getElementById(1).style.backgroundColor==color && document.getElementById(5).style.backgroundColor==color && document.getElementById(9).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-        hasWon=true;
+        gameWon(color);
     }
     else if (document.getElementById(3).style.backgroundColor==color && document.getElementById(5).style.backgroundColor==color && document.getElementById(7).style.backgroundColor==color) {
-        alert(color+=" wins.\n press ok for new game");
-        window.location.reload();
-        hasWon=true;
+        gameWon(color);
     }
-
 }
 function turn(){
    
@@ -138,4 +108,10 @@ function turn(){
         turnIndicator.innerHTML="blue's turn";
     }
 }
+function gameWon(color){
+ hasWon=true;
+    alert(color+=" wins.\n press ok for new game");
+        window.location.reload();
+}
+
 
