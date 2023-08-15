@@ -1,3 +1,6 @@
+table{
+    margin-top: 100px;
+}
 table,tr,td{    
     width: 280px;
     height: 100px;
@@ -8,13 +11,13 @@ td:nth-child(n){
     border-collapse: collapse;
 }
 td:hover{
-    background-color: skyblue;
+    background-color: whitesmoke;
 }
 td:nth-child(n){
     border-right: 2px solid;
 } 
  tr:last-child td:nth-child(n){
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 td:last-child{
     border-right: 2px solid transparent;

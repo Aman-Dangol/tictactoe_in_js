@@ -5,10 +5,13 @@ let check=true;
 let hasWon=false;
 let turnIndicator=document.getElementById("turn_indicator");
 function clicked(index){
+
+
      i =index;
     ele=document.getElementById(i);
     if(hasWon==false){
         if(check==true){
+
             if(playerCount%2==0){
                 if(ele.style.backgroundColor!='blue'){
                     if(ele.style.backgroundColor!="red"){
@@ -25,7 +28,7 @@ function clicked(index){
                     }
                 }
                 else{
-                    alert("the space is already occupied");
+                    alert("this  space has already been occupied");
                 } 
             }
             else{
@@ -50,12 +53,14 @@ function clicked(index){
         setTimeout(spaceLeft,100);
     }
 }
-console.log("");
+
 function spaceLeft(){
     let count = 0;
     if(hasWon==false){
         for(let i=1;i<=9;i++){
+
             if (document.getElementById(i).style.backgroundColor=='') {
+                console.log("inside loop of inside spaceleft")
                 count++;
                 check= true;
             }
